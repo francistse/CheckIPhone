@@ -13,8 +13,9 @@ public class Main {
 		URL url;
 		BufferedReader reader = null;
 		String text;
+		boolean isChecking = true;
 		try {
-			while (true) {
+			while (isChecking) {
 				url = new URL(
 						"https://reserve.cdn-apple.com/HK/en_HK/reserve/iPhone/availability.json");
 
@@ -29,6 +30,7 @@ public class Main {
 				// JSONObject obj = new JSONObject(text);
 				if (text.contains("true")) {
 					JOptionPane.showMessageDialog(null, "Has iphone ar");
+					isChecking = false;
 					//System.out.println("true");
 				} else {
 					//System.out.println("false");
